@@ -7,6 +7,7 @@
 
 namespace app\commands;
 
+use app\models\User;
 use yii\console\Controller;
 use yii\console\ExitCode;
 
@@ -30,5 +31,20 @@ class HelloController extends Controller
         echo $message . "\n";
 
         return ExitCode::OK;
+    }
+
+    public function actionCreateRootUser($username, $password)
+    {
+        $user = new User();
+        $user->username = $username;
+        $user->setPassword($password);
+        $user->role = User::ROLE_ROOT;
+
+        if (!$user->save()){
+            echo "Failed to save user. Details: " . json_encode($user->getFirstErrors());
+            exit(1);
+        }
+
+        echo "Done!";
     }
 }

@@ -30,7 +30,8 @@ $appRootDir = __DIR__ ;
 
 // Re-Creating runtime dirs
 $runtimeDirs = [
-    "runtime"
+    "runtime",
+    "web/assets",
 ];
 
 foreach ($runtimeDirs as $runtimeDir ) {
