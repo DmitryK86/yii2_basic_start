@@ -10,6 +10,8 @@ defined('YII_ENV') or define('YII_ENV', 'test');
 
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
+require __DIR__ . '/../helpers/DotenvLoader.php';
+app\helpers\DotenvLoader::load();
 
 $config = require __DIR__ . '/../config/test.php';
 

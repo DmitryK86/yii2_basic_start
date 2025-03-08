@@ -27,9 +27,7 @@ tests/_output/*
 tests/_support/_generated
 
 # configs
-config/db.php
-config/local/env.php
-config/local/web.php
+.env.local
 
 # resources
 web/uploads
